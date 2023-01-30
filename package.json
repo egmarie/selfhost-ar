@@ -4,13 +4,37 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev2": "npm-run-all -p backend frontend",
+    "backend": "nodemon server.js --ignore './src/' --ignore './public'",
+    "frontend": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server",
+    "build": "webpack",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "axios": "^1.2.6",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
     "express": "^4.18.2",
-    "https": "^1.0.0"
+    "https": "^1.0.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "style-loader": "^3.3.1",
+    "validator": "^13.7.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-manifest-plugin": "^5.0.0"
   }
 }
