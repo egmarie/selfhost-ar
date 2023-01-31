@@ -1,7 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "--works with webpack-dev-server --node server.js to start project on localhost:3000 --sudo npm run dev",
   "main": "index.js",
   "scripts": {
     "dev2": "npm-run-all -p backend frontend",
@@ -40,5 +40,13 @@
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1",
     "webpack-manifest-plugin": "^5.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egmarie/selfhost-ar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/egmarie/selfhost-ar/issues"
+  },
+  "homepage": "https://github.com/egmarie/selfhost-ar#readme"
 }
