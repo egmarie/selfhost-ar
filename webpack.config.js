@@ -17,6 +17,9 @@ module.exports = {
             // requestCert: true,
         },
     },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+  },
     },
     plugins: [new HtmlWebpackPlugin({template: './public/index.html'})],
     output: {

@@ -1,11 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 import ReactDOM from "react-dom"
 import { Outlet, Routes, Route, Link } from "react-router-dom"
+
 import { Shackleton } from "./components/shackleton"
 import { Finance } from "./components/campaign-finance"
+import {Bars, Map, SphereKeys, Sphere} from "./components/campaign_sub"
 import { Rainforest } from "./components/amz-rainforest"
+import {Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation} from "./components/amz_sub"
 import { Home, NoMatch } from "./components/home"
+
 export default function App() {
+
   const layoutLabels = {
     "sitetitle": "Blue Sky Innovations VR",
     "sitelogo":"",
@@ -13,33 +18,82 @@ export default function App() {
     {
       "name": "Home",
       "link": "/",
-      "element": "Home",
+      "element": Home,
       "greeting": "Welcome",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
     },
     {
       "name": "Shackleton",
       "link": "/shackleton",
-      "element": "Shackleton",
+      "element": Shackleton,
       "subtitle": "A Leadership Experience",
       "img": "",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
     },
     {
       "name": "Campaign Finance",
-      "link": "/campaign-finance",
-      "element": "Finance",
+      "link": "/campaign-finance/*",
+      "element": Finance,
       "subtitle": "Lorem ipsum dolor sit amet ",
       "img": "",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?",
+      "children": [
+        {
+          "name": "Bars",
+          "link": "bars",
+          "element": Bars
+        },
+        {
+          "name": "Map",
+          "link": "map",
+          "element": Map
+        },
+        {
+          "name": "Spheres-key",
+          "link": "spheres-key",
+          "element": SphereKeys
+        },
+        {
+          "name": "Spheres",
+          "link": "spheres",
+          "element": Sphere
+        },
+      ]
     },
     {
       "name": "Amazon Rainforest",
-      "link": "/amazon-rainforest",
-      "element": "Rainforest",
+      "link": "/amazon-rainforest/*",
+      "element": Rainforest,
       "subtitle": "Lorem ipsum dolor sit amet ",
       "img": "",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?",
+      "children": [
+        {
+        "name": "Deforestation",
+        "link": "deforestation",
+        "element": Deforestation
+      },
+      {
+        "name": "Lumberyard",
+        "link": "lumberyard",
+        "element": Lumberyard
+      },
+      {
+        "name": "Slaughterhouse",
+        "link": "slaughterhouse",
+        "element": Slaughterhouse
+      },
+      {
+        "name": "Soyfarm",
+        "link": "soyfarm",
+        "element": Soyfarm
+      },
+      {
+        "name": "Tribe",
+        "link": "tribe",
+        "element": Tribe
+      },
+      ]
     },
   ]
 }
@@ -61,10 +115,39 @@ export default function App() {
         element={<Shackleton prjs={layoutLabels.navs} />}/>
       <Route
         path={layoutLabels.navs[2].link}
-        element={<Finance prjs={layoutLabels.navs} />}/>
+        element={<Finance prjs={layoutLabels.navs} />}>
+            <Route
+                path={layoutLabels.navs[2].children[0].link}
+                element={<Bars prjs={layoutLabels.navs[2].children[0]} />} />
+            <Route
+                path={layoutLabels.navs[2].children[1].link}
+                element={<Map prjs={layoutLabels.navs[2].children[1]} />} />
+            <Route
+                path={layoutLabels.navs[2].children[2].link}
+                element={<SphereKeys prjs={layoutLabels.navs[2].children[2]} />} />
+            <Route
+                path={layoutLabels.navs[2].children[3].link}
+                element={<Sphere prjs={layoutLabels.navs[2].children[3]} />} />
+           </Route>
       <Route
         path={layoutLabels.navs[3].link}
-        element={<Rainforest prjs={layoutLabels.navs} />}/>
+        element={<Rainforest prjs={layoutLabels.navs} />}>
+            <Route
+                path={layoutLabels.navs[3].children[0].link}
+                element={<Deforestation prjs={layoutLabels.navs[3].children[0]} />} />
+            <Route
+                path={layoutLabels.navs[3].children[1].link}
+                element={<Lumberyard prjs={layoutLabels.navs[3].children[1]} />} />
+            <Route
+                path={layoutLabels.navs[3].children[2].link}
+                element={<Slaughterhouse prjs={layoutLabels.navs[3].children[2]} />} />
+            <Route
+                path={layoutLabels.navs[3].children[3].link}
+                element={<Soyfarm prjs={layoutLabels.navs[3].children[3]} />} />
+            <Route
+                path={layoutLabels.navs[3].children[4].link}
+                element={<Tribe prjs={layoutLabels.navs[3].children[4]} />} />
+          </Route>
       <Route
         path="*"
         element={<NoMatch />}/>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Dollar Race</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <article class="slide-first">
+      <header>
+        <div class="order-options">
+          <div class="option-desc">Variant:</div>
+          <div class="button-square"><button class="selected" id="option-1" data-order="1,2,3">1</button></div>
+          <div class="button-square"><button id="option-2" data-order="1,3,2">2</button></div>
+          <div class="button-square"><button id="option-3" data-order="2,1,3">3</button></div>
+          <div class="button-square"><button id="option-4" data-order="2,3,1">4</button></div>
+          <div class="button-square"><button id="option-5" data-order="3,1,2">5</button></div>
+          <div class="button-square"><button id="option-6" data-order="3,2,1">6</button></div>
+        </div>
+        <div class="container">
+          <div class="header-line">
+            <h1>The Dollar Race</h1>
+            <h3>Digging into contributions to the 2020 Democratic primary campaigns</h3>
+            <p class="byline">A thesis project by <strong>Peter Andringa</strong></h6>
+          </div>
+        </div>
+      </header>
+
+      <section class="text-section">
+        <div class="container">
+          <p>The 2020 Democratic primary race is in full swing, and states are casting votes after months of rallies, debates, and social media advertisements. Soon, voters themselves will evaluate candidates and decide who will lead the Democratic party into the general election in November.</p>
+          <p>While votes make the final decision, they aren't the only goal: modern political campaigns are fund-raising machines that kick into gear years before the election. To some degree, the candidates' success at the ballot box is determined by how big of a war chest they've built up this past summer and fall.</p>
+        </div>
+      </section>
+
+      <section class="text-section">
+        <div class="container">
+          <p>That's why candidates flood inboxes with fundraising asks, create elaborate Facebook campaigns, and plug their website on the debate stage. It's also why some have already dropped out before votes were even cast: those who couldn't get enough donors simply didn't have the cash to compete against bigger bank accounts.</p>
+          <p>Federal campaign finance rules give us a remarkably clear-eyed view into each candidate's fundraising operation, because the campaigns must file statements about contributions, expenditures, and cash on hand on a quarterly basis. That data can reveal a surprising amount about how each campaign is doing in the race for dollars.</p>
+        </div>
+      </section>
+
+      <section class="text-section" data-order-num="1">
+        <div class="container">
+          <p>By looking at a campaign's total fundraising, we can get a measure of how successful they've been over the last year — and maybe predict how they will perform in upcoming primaries.</p>
+          <p>It's even more interesting to compare the fundraising amounts against candidates' performance in national polls, to see which candidates are polling well despite an apparent disadvantage in fundraising.</p>
+        </div>
+      </section>
+
+      <section class="ar-section" data-ar-id="bars" data-ar-src="ar/bars.reality" data-order-num="1">
+        <div class="chart-info">
+          <h2>Total contributions vs. polls</h2>
+          <ul class="legend">
+            <li class="legend-item blue">Total contributions, Jan. 2019 - Feb. 2020</li>
+            <li class="legend-item yellow">Polling Average, Feb. 1, 2020</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="text-section" data-order-num="2">
+        <div class="container">
+          <p>The Federal Election Commission also requires that campaigns provide information about each donor, including their name, address, occupation, and contribution dates and amounts.</p>
+          <p>This massive dataset — already more than 6 million individuals — offers a very granular look at the types of people that support each candidate, and lets us guess at where those candidates might perform best.</p>
+        </div>
+      </section>
+
+      <section class="ar-section" data-ar-id="map-new" data-ar-src="ar/map.reality" data-order-num="2">
+        <div class="chart-info">
+          <h2>Top candidate, total contributions by county</h2>
+          <ul class="legend legend--inline">
+            <li class="legend-item warren">Elizabeth Warren</li>
+            <li class="legend-item sanders">Bernie Sanders</li>
+            <li class="legend-item buttigieg">Pete Buttigieg</li>
+            <li class="legend-item klobuchar">Amy Klobuchar</li>
+            <li class="legend-item biden">Joe Biden</li>
+            <li class="legend-item orourke">Beto O'Rourke</li>
+            <li class="legend-item harris">Kamala Harris</li>
+          </ul>
+        </div>
+        <div class="container">
+          <p class="ar-overlay">This map shows the top-performing candidate in every county across the United States, with the height representing the total amount donated in that county.</p>
+        </div>
+      </section>
+
+      <section class="ar-section" data-ar-id="map-new" data-order-num="2">
+        <div class="chart-info">
+          <h2>Top candidate, total contributions by county</h2>
+          <ul class="legend legend--inline">
+            <li class="legend-item warren">Elizabeth Warren</li>
+            <li class="legend-item sanders">Bernie Sanders</li>
+            <li class="legend-item buttigieg">Pete Buttigieg</li>
+            <li class="legend-item klobuchar">Amy Klobuchar</li>
+            <li class="legend-item biden">Joe Biden</li>
+            <li class="legend-item orourke">Beto O'Rourke</li>
+          </ul>
+        </div>
+        <div class="container">
+          <p class="ar-overlay">Notice how candidates tend to perform well within their home states — like Amy Klobuchar in Minnesota, Pete Buttigieg in Indiana, and Beto O'Rourke in Texas (who raised the most dollars there, even though he later dropped out).</p>
+        </div>
+      </section>
+
+      <section class="ar-section" data-ar-id="map-new" data-order-num="2">
+        <div class="chart-info">
+          <h2>Top candidate, total contributions by county</h2>
+          <ul class="legend legend--inline">
+            <li class="legend-item warren">Elizabeth Warren</li>
+            <li class="legend-item sanders">Bernie Sanders</li>
+            <li class="legend-item buttigieg">Pete Buttigieg</li>
+            <li class="legend-item klobuchar">Amy Klobuchar</li>
+            <li class="legend-item biden">Joe Biden</li>
+            <li class="legend-item orourke">Beto O'Rourke</li>
+          </ul>
+        </div>
+        <div class="container">
+          <p class="ar-overlay">Even so, big cities on the coasts donate by far the most money to the democratic candidates, particularly New York and Los Angeles.</p>
+        </div>
+      </section>
+
+      <section class="text-section" data-order-num="3">
+        <div class="container">
+          <p>This primary cycle has been marked by a sharp debate about wealthy donors and their relationship to campaigns.</p>
+          <p>Some candidates have decided to aim for small-dollar donations from grassroots supporters online. Others have relied on the traditional high-dollar banquets and wealthy party donors, who often give the maximum $2,800.</p>
+        </div>
+      </section>
+
+      <section class="text-section" data-order-num="3">
+        <div class="container">
+          <p>In November, the question was disrupted by a new entrant — former New York Mayor Michael Bloomberg — who brought his immense personal fortune to help his campaign. Bloomberg refused to accept donations at all, arguing that his own money would limit the influence of outside donors.</p>
+          <p>The businessman has since poured more than $500 million into his election effort, dwarfing the total spending of the other candidates in just a few months.</p>
+        </div>
+      </section>
+
+      <section class="ar-section" data-ar-id="spheres" data-ar-src="ar/spheres-key.reality" data-order-num="3">
+        <div class="chart-info">
+          <h2>Contributions by dollar amount</h2>
+          <ul class="legend">
+            <li class="legend-item green">Small-dollar donations (below $200)</li>
+            <li class="legend-item orange">Large-dollar donations (above $200)</li>
+            <li class="legend-item navy">Self-funded by candidate</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="text-section">
+        <div class="container">
+          <p>All of this is only the beginning of what is already the most expensive campaign cycle in history. In the nine months between now and November, millions, and maybe billions more will be spent by campaigns on both sides of the aisle.</p>
+          <p>The whole time, you can expect to hear candidates and citizens alike debate the merits of big money in politics, and the influence those donors might have over policy or governance. That's all the more reason to pay close attention to it, and take advantage of public data that help show how the U.S. political system funds itself.</p>
+        </div>
+      </section>
+
+      <footer class="sources">
+        <div class="container">
+          <h2>Credits</h2>
+          <p>Written, designed, and developed by Peter Andringa.<br>
+          Thesis Advisor: Steven King</p>
+          <p>UNC IRB #20-0034</p>
+        </div>
+        <div class="container">
+          <p>Campaign contribution amounts come from the campaigns' FEC filings for 2019 and January 2020.</p>
+          <p>Donor locations come from FEC filings of the campaigns and ActBlue, a major democratic donor pass-through. It excludes approximately 10% of donors who gave less than $200 directly to a campaign.</p>
+          <p>Polling data comes from the RealClearPolitics polling average.</p>
+        </div>
+      </footer>
+
+    </article>
+
+    <nav class="bottom-nav">
+      <div class="nav-arrow arrow-left" id="js-go-back" ontouchstart="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      </div>
+      <div class="nav-instructions">
+        (Tap the sides to advance)
+      </div>
+      <div class="nav-arrow arrow-right" id="js-go-next" ontouchstart="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </div>
+    </nav>
+
+    <h4 id="ar-status" class="hidden">Tap to place AR</h4>
+
+    <button class="reset" id="js-reset-ar" ontouchstart=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-ccw"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+    
+    <div class="background-blur"></div>
+    
+    <script type="module" src="page.js"></script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import ReactDOM from "react-dom"
 import { Link } from "react-router-dom"
  function Home(props) {
@@ -10,7 +10,9 @@ import { Link } from "react-router-dom"
     const prjs2 = props.prjs.filter(p => p.name != "Home");
     const pageArray = props.prjs.filter(p => p.name === "Home");
     const page = pageArray[0]
-  
+    useEffect(() => {
+      document.title = "Blue Sky VR"
+    }, [])
     
     // var result = str.slice(1);
 
