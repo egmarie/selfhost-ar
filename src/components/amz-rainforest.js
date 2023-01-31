@@ -2,23 +2,23 @@
 
 import React, { useEffect } from "react"
 
-export function Rainforest() {
+export function Rainforest(props) {
   useEffect(() => {
     document.title = "Amazon Rainforest"
   }, [])
-
+//let thisPage = props.prjs
+const pageArray = props.prjs.filter(p => p.name === "Amazon Rainforest");
+const page = pageArray[0]
+console.log(page.name) 
   return (
     <div>
-      <h2 className="display-4">Learn More About Us</h2>
+      <h2 className="display-5">{page.name}</h2>
       <p className="lead">
-        This is the <strong>about page</strong>. Dolor sit amet consectetur adipisicing elit. Itaque quasi natus fugit ab laudantium dolores, dicta blanditiis sit eum perferendis minima sunt repudiandae voluptates tempore. Fuga dicta ipsa beatae vel?
+        {page.subtitle}
       </p>
       <div className="row">
         <div className="col-sm">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?</p>
-        </div>
-        <div className="col-sm">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?</p>
+          <p>{page.description}</p>
         </div>
       </div>
     </div>

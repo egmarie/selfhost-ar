@@ -1,22 +1,37 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { Outlet, Routes, Route, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
  function Home(props) {
-    console.log(props.prjs.map((p) => p.name))
-    const prjs = props.prjs
-    //to={proj.link}
-    console.log(prjs)
-    console.log
+    // console.log(props.prjs.map((p) => p.name))
+    let prjs = props.prjs
+    // console.log(prjs)
+
+    //remove home to only show project pages
+    const prjs2 = props.prjs.filter(p => p.name != "Home");
+    const pageArray = props.prjs.filter(p => p.name === "Home");
+    const page = pageArray[0]
+  
+    
+    // var result = str.slice(1);
+
     return (
       <>
-    <ul>
-       {prjs.map((proj) => 
-        <li><a>
-
-            {/* <h3>{`${proj.name}`}</h3> */}
+      <h2 className="display-5">{page.greeting}</h2>
+      <div className="row">
+        <div className="col-sm">
+          <p>{page.description}</p>
+        </div>
+      </div>
+    <ul className="d-flex flex-wrap">
+       {prjs2.map((proj) => 
+        <li key={proj.link.slice(1)} id={proj.link.slice(1)} className="port-container shadow-sm m-2 p-2"><Link to={proj.link}>
+            <div className="img-container bg-light">
+              <img className="port-img" src={proj.img} />
+            </div>
+            <h3>{proj.name}</h3>
             <h4>{proj.subtitle}</h4>
 
-        </a></li>
+        </Link></li>
         )}
     </ul>
 

@@ -6,107 +6,115 @@ import { Finance } from "./components/campaign-finance"
 import { Rainforest } from "./components/amz-rainforest"
 import { Home, NoMatch } from "./components/home"
 export default function App() {
-  let experiences = [
+  const layoutLabels = {
+    "sitetitle": "Blue Sky Innovations VR",
+    "sitelogo":"",
+    "navs": [
     {
-      "name": "Shackleton VR",
+      "name": "Home",
+      "link": "/",
+      "element": "Home",
+      "greeting": "Welcome",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
+    },
+    {
+      "name": "Shackleton",
+      "link": "/shackleton",
+      "element": "Shackleton",
       "subtitle": "A Leadership Experience",
       "img": "",
-      "link": "/shackleton"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
     },
     {
       "name": "Campaign Finance",
-      "subtitle": "fff",
+      "link": "/campaign-finance",
+      "element": "Finance",
+      "subtitle": "Lorem ipsum dolor sit amet ",
       "img": "",
-      "link": "/campaign-finance"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
     },
     {
       "name": "Amazon Rainforest",
-      "subtitle": "aaa",
+      "link": "/amazon-rainforest",
+      "element": "Rainforest",
+      "subtitle": "Lorem ipsum dolor sit amet ",
       "img": "",
-      "link": "/amazon-rainforest"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
     },
   ]
+}
   
   return (
     <>
     {/* // <BrowserRouter> */}
       
-    <HeaderLayout /> 
+    <HeaderLayout labels={layoutLabels} /> 
 
        <div className="container py-3 py-md-5 px-5">
     <Routes>
     <Route
-      path="/"
-      element={<Home prjs={experiences} 
-      index/>}/>
+      path={layoutLabels.navs[0].link}
+      element={<Home prjs={layoutLabels.navs} />}
+      index/>
       <Route
-        path="/shackleton"
-        element={<Shackleton />}/>
+        path={layoutLabels.navs[1].link}
+        element={<Shackleton prjs={layoutLabels.navs} />}/>
       <Route
-        path="/campaign-finance"
-        element={<Finance/>}/>
+        path={layoutLabels.navs[2].link}
+        element={<Finance prjs={layoutLabels.navs} />}/>
       <Route
-        path="/amazon-rainforest"
-        element={<Rainforest />}/>
+        path={layoutLabels.navs[3].link}
+        element={<Rainforest prjs={layoutLabels.navs} />}/>
       <Route
         path="*"
         element={<NoMatch />}/>
   </Routes>
       </div>
       
-    <FooterLayout />
+    <FooterLayout labels={layoutLabels} />
     {/* // </BrowserRouter> */}
     </>
   )
 }
 
-function HeaderLayout() {
+function HeaderLayout(props) {
+  let title = props.labels.sitetitle
+  let labels = props.labels.navs
   return (
 
 <header className="bg-light pt-3">
 <div className="container">
-  <h1 className="display-1">Our Amazing App</h1>
+  <h1 className="display-1">{title}</h1>
   <ul className="nav nav-tabs">
-  <li className="nav-item">
-      <Link to="/" className="nav-link" activeclassname="active">
-        Home 
-      </Link>
-    </li>
-    <li className="nav-item">
-      <Link to="/shackleton" className="nav-link" activeclassname="active">
-        Shackleton 
-      </Link>
-    </li>
-    <li className="nav-item">
-      <Link to="/amazon-rainforest" className="nav-link" activeclassname="active"> 
-        Amazon Rainforest
-      </Link>
-    </li>
-    <li className="nav-item">
-      <Link to="/campaign-finance" className="nav-link" activeclassname="active">
-        Campaign Finance
-      </Link>
-    </li>
+  {labels.map((l) => 
+          <li className="nav-item" key={l.name}>
+          <Link className="text-muted nav-link" activeclassname="active" to={l.link}>
+            {l.name}
+          </Link>
+          </li>
+      )}
   </ul>
 </div>
 </header>
   )
 }
 
-function FooterLayout() {
+function FooterLayout(props) {
+  let labels = props.labels.navs
+  console.log(labels)
   return (
-    <footer className="border-top pt-3">
-    <p className="small text-center text-muted">
-      <Link className="text-muted mr-1" to="/shackleton">
-        Shackleton
-      </Link>
-      <Link className="text-muted ml-1" to="/campaign-finance">
-        Campaign Finance
-      </Link>
-      <Link className="text-muted ml-1" to="/amazon-rainforest">
-        Amazon Rainforest
-      </Link>
-    </p>
+    <footer className="border-top pt-4 d-flex justify-content-center">
+      <ul className="d-flex">
+      {labels.map((l) => 
+      <li key={l.name}>
+          <p className="small text-center text-muted p-2">
+          <Link className="text-muted mr-1" to={l.link}>
+            {l.name}
+          </Link>
+          </p>
+          </li>
+      )}
+      </ul>
   </footer>
   )
 }
