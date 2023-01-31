@@ -10,7 +10,7 @@ export function Rainforest(props) {
 const pageArray = props.prjs.filter(p => p.name === "Amazon Rainforest");
 const page = pageArray[0]
 const children = page.children
-console.log(page.name) 
+ 
   return (
     <>
     <div>
@@ -43,7 +43,7 @@ console.log(page.name)
                 path={children[4].link}
                 element={<Tribe page={children[4]} />} />
       </Routes>
-    <a className="ar" rel="ar" href="https://localhost:8080/assets/amazon-quicklook/usdz/lumberyard.usdz">hello</a>
+
     </>
   )
 }

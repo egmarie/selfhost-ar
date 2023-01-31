@@ -41,22 +41,26 @@ export default function App() {
         {
           "name": "Bars",
           "link": "bars",
-          "element": Bars
+          "element": Bars,
+          "subtitle": "Lorem ipsum dolor sit amet ",
         },
         {
           "name": "Map",
           "link": "map",
-          "element": Map
+          "element": Map,
+          "subtitle": "Lorem ipsum dolor sit amet ",
         },
         {
           "name": "Spheres-key",
           "link": "spheres-key",
-          "element": SphereKeys
+          "element": SphereKeys,
+          "subtitle": "Lorem ipsum dolor sit amet ",
         },
         {
           "name": "Spheres",
           "link": "spheres",
-          "element": Sphere
+          "element": Sphere,
+          "subtitle": "Lorem ipsum dolor sit amet ",
         },
       ]
     },
@@ -71,27 +75,32 @@ export default function App() {
         {
         "name": "Deforestation",
         "link": "deforestation",
-        "element": Deforestation
+        "element": Deforestation,
+        "subtitle": "Lorem ipsum dolor sit amet ",
       },
       {
         "name": "Lumberyard",
         "link": "lumberyard",
-        "element": Lumberyard
+        "element": Lumberyard,
+        "subtitle": "Lorem ipsum dolor sit amet ",
       },
       {
         "name": "Slaughterhouse",
         "link": "slaughterhouse",
-        "element": Slaughterhouse
+        "element": Slaughterhouse,
+        "subtitle": "Lorem ipsum dolor sit amet ",
       },
       {
         "name": "Soyfarm",
         "link": "soyfarm",
-        "element": Soyfarm
+        "element": Soyfarm,
+        "subtitle": "Lorem ipsum dolor sit amet ",
       },
       {
         "name": "Tribe",
         "link": "tribe",
-        "element": Tribe
+        "element": Tribe,
+        "subtitle": "Lorem ipsum dolor sit amet ",
       },
       ]
     },
@@ -184,7 +193,7 @@ function HeaderLayout(props) {
 
 function FooterLayout(props) {
   let labels = props.labels.navs
-  console.log(labels)
+
   return (
     <footer className="border-top pt-4 d-flex justify-content-center">
       <ul className="d-flex">

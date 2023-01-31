@@ -9,7 +9,7 @@ export function Finance(props) {
   const pageArray = props.prjs.filter(p => p.name === "Campaign Finance");
   const page = pageArray[0]
   const children = page.children
-  console.log(page.name)
+
   return (
     <>
     <div>
@@ -38,9 +38,6 @@ export function Finance(props) {
                 path={children[3].link}
                 element={<Sphere page={children[3]} />} />
       </Routes>
-
-
-    <a className="ar" rel="ar" href="/assets/campaign-finance-datavis/ar/map.reality">hello</a>
         </>
 
 
