@@ -1,24 +1,26 @@
 
+import deforest_ from require("../../assets/amazon-quicklook/glb/_deforestation.glb")
+import lumber_ from "../../assets/amazon-quicklook/glb/_lumberyard.glb";
+import slaughter_ from "../../assets/amazon-quicklook/glb/_slaughterhouse.glb";
+import soyfarm_ from "../../assets/amazon-quicklook/glb/_soyfarm.glb";
 
+import tribe_ from "../../assets/amazon-quicklook/glb/_tribe.glb";
 export default function loadThree() {  
 //Three JS code goes here to show off the models
     const loader = new THREE.GLTFLoader()  // This comes from GLTFLoader.js.
     const raycaster = new THREE.Raycaster()
     const tapPosition = new THREE.Vector2()
-
+    const canvas = document.querySelector('canvas#three1-container')
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    document.body.appendChild( renderer.domElement );
 
 
-    const deforest = require('./assets/amazon-quicklook/glb/_deforestation.glb')
-    const lumber = require('./assets/amazon-quicklook/glb/_lumberyard.glb')
-    const slaughter = require('./assets/amazon-quicklook/glb/_slaughterhouse.glb')
-    const soyfarm = require('./assets/amazon-quicklook/glb/_soyfarm.glb')
-    const tribe = require('./assets/amazon-quicklook/glb/_tribe.glb')
+    const deforest = deforest_
+    const lumber = require(lumber_)
+    const slaughter = require(slaughter_)
+    const soyfarm = require(soyfarm_)
+    const tribe = require(tribe_)
 
     //load models
     loader.load(
@@ -26,7 +28,6 @@ export default function loadThree() {
         deforest,
         // loaded handler
         (gltf) => {
-  
           model = gltf.scene
           scene.add(model)
         }
@@ -37,7 +38,6 @@ export default function loadThree() {
         lumber,
         // loaded handler
         (gltf) => {
-  
           model = gltf.scene
           scene.add(model)
         }
@@ -80,6 +80,11 @@ export default function loadThree() {
       // Set the initial camera position relative to the scene we just laid out. This must be at a
       // height greater than y=0.
       camera.position.set(0, 3, 0)
+      const renderer = new THREE.WebGLRenderer({
+        canvas: canvas
+    })
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
   
     }
 

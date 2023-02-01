@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { Outlet, Routes, Route, Link } from "react-router-dom"
-
+import {loadThree} from "./amz-3"
 
 
 function Deforestation(props) {
@@ -11,7 +11,7 @@ function Deforestation(props) {
       <div className="subpage-container">
           <h5>{page.name}</h5>
           <a className="ar" rel="ar" href="https://localhost:8080/assets/amazon-quicklook/usdz/lumberyard.usdz">hello</a>
-          <div id="three1_container" className=""></div>
+          <canvas id="three1_container" className=""></canvas>
       </div>
       </>
     )
@@ -23,7 +23,7 @@ function Deforestation(props) {
           <>
       <div className="subpage-container">
           <h5>{page.name}</h5>
-          <div id="three2_container" className=""></div>
+          <canvas id="three2_container" className=""></canvas>
       </div>
           
           </>
