@@ -3,10 +3,10 @@ import ReactDOM from "react-dom"
 import { Outlet, Routes, Route, Link } from "react-router-dom"
 
 import { Shackleton } from "./components/shackleton"
-import { Finance } from "./components/campaign-finance"
-import {Bars, Map, SphereKeys, Sphere} from "./components/campaign_sub"
-import { Rainforest } from "./components/amz-rainforest"
-import {Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation} from "./components/amz_sub"
+import { Finance } from "./components/campaign-finance/campaign-finance"
+import {Bars, Map, SphereKeys, Sphere} from "./components/campaign-finance/campaign_sub"
+import { Rainforest } from "./components/amz-rainforest/amz-rainforest"
+import {Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation} from "./components/amz-rainforest/amz_sub"
 import { Home, NoMatch } from "./components/home"
 
 export default function App() {

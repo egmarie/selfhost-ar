@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
 
 module.exports = {
-  entry: "./main.js",
+  entry: "./_main.js",
   devServer: {
     server: {
         type: 'https',
@@ -35,7 +35,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: [["@babel/preset-env", { "useBuiltIns": "usage", "targets": "defaults" }], "@babel/preset-react"]
+            presets: [["@babel/preset-env", { "useBuiltIns": "usage", "corejs": 3, "targets": "defaults" }], "@babel/preset-react"]
           }
         }
       },
