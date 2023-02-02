@@ -30,6 +30,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
@@ -40,15 +44,15 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
-    }
+    },
+    {
+      test: /\.(glb|gltf)$/,
+      type: 'asset/resource',
+
+    },
     ]
     },
 }
 
-//"sass-loader"

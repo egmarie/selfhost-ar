@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import ReactDOM from "react-dom"
 import { Link } from "react-router-dom"
+
  function Home(props) {
     // console.log(props.prjs.map((p) => p.name))
     let prjs = props.prjs
