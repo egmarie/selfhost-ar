@@ -1,6 +1,8 @@
 import React, { useEffect } from "react"
 import ReactDOM from "react-dom"
+import ReactDOM from "react-dom/client";
 import { Outlet, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom";
 
 import { Shackleton } from "./components/shackleton"
 import { Finance } from "./components/campaign-finance/campaign-finance"
@@ -9,7 +11,9 @@ import { Rainforest } from "./components/amz-rainforest/amz-rainforest"
 import { Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation } from "./components/amz-rainforest/amz_sub"
 import { Home, NoMatch } from "./components/home"
 //import {loadThree} from "./components/amz-rainforest/amz-3"
-export default function App() { 
+import "./src/styles.scss";
+
+function App() { 
 const base = process.env.BASE
   const layoutLabels = {
     "sitetitle": "Blue Sky Innovations VR",
@@ -127,8 +131,8 @@ const base = process.env.BASE
   
   return (
     <>
-    {/* // <BrowserRouter> */}
-      
+      <React.StrictMode>
+    <BrowserRouter>
     <HeaderLayout labels={layoutLabels} /> 
 
        <div className="container py-3 py-md-5 px-5">
@@ -182,10 +186,18 @@ const base = process.env.BASE
       </div>
       
     <FooterLayout labels={layoutLabels} />
-    {/* // </BrowserRouter> */}
+
+
+    </BrowserRouter>
+   </React.StrictMode>
+
     </>
   )
 }
+
+ReactDOM.createRoot(document.getElementById("app")).render(
+  <App />
+);
 
 function HeaderLayout(props) {
   let title = props.labels.sitetitle

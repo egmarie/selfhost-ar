@@ -4,15 +4,42 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
+const currentTask = process.env.STATUS
 
-module.exports = {
-  entry: "./_main.js",
-    plugins: [new HtmlWebpackPlugin({template: './public/index.html'})],
-    output: {
-    filename: "bundled.[hash].js",
-    path: path.resolve(__dirname, "public")
+const config = {
+  entry: "./server.js",
+  output: {
+      path: path.resolve(__dirname, "public"),
+      filename: "bundled.[fullhash].js",
   },
-  mode: "development",
+  resolve: {
+  fallback: {
+    "fs": false,
+    "tls": false,
+    "path": false,
+    "path-browserify": false,
+    "http": require.resolve("stream-http"),
+    "net": false,
+    "zlib": false,
+    "stream": false,
+    "crypto": false,
+    "buffer": false,
+    "util": false,
+    "url": require.resolve("url/"),
+    "async_hooks": false,
+    "crypto-browserify": require.resolve('crypto-browserify'), //if you want to use this module also don't forget npm i crypto-browserify 
+  } ,
+},
+  plugins: [new HtmlWebpackPlugin({template: './src/index.html'})],
+  mode: 'production',
+  devServer: {
+    port:8080,
+    static: path.resolve(__dirname, 'dist'),
+    hot: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+  },
+},
   module: {
     rules: [
       {
@@ -42,3 +69,10 @@ module.exports = {
     },
 }
 
+if (currentTask == "build") {
+  config.mode = "production"
+  config.module.rules[0].use[0] = MiniCssExtractPlugin.loader
+  config.plugins.push(new MiniCssExtractPlugin({ filename: "main.[hash].css" }), new CleanWebpackPlugin(), new WebpackManifestPlugin())
+}
+
+module.exports = config
