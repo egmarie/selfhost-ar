@@ -7,20 +7,6 @@ const { WebpackManifestPlugin } = require("webpack-manifest-plugin")
 
 module.exports = {
   entry: "./_main.js",
-  devServer: {
-    server: {
-        type: 'https',
-        options: {
-            key: fs.readFileSync("../_CertAuth/localhost/localhost.decrypted.key"),
-            cert: fs.readFileSync("../_CertAuth/localhost/localhost.crt"),
-            ca: fs.readFileSync("../_CertAuth/CA.pem"),
-            // requestCert: true,
-        },
-    },
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-  },
-    },
     plugins: [new HtmlWebpackPlugin({template: './public/index.html'})],
     output: {
     filename: "bundled.[hash].js",
