@@ -4,13 +4,10 @@
   "description": "--works with webpack-dev-server --node server.js to start project on localhost:3000 --sudo npm run dev",
   "main": "index.js",
   "scripts": {
-    "dev2": "npm-run-all -p backend frontend",
-    "backend": "nodemon server.js --ignore './src/' --ignore './public'",
-    "frontend": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
     "build": "webpack",
-    "start": "node server.js"
+    "start": "node _main.js"
   },
   "keywords": [],
   "author": "",
