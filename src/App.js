@@ -9,8 +9,8 @@ import { Rainforest } from "./components/amz-rainforest/amz-rainforest"
 import {Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation} from "./components/amz-rainforest/amz_sub"
 import { Home, NoMatch } from "./components/home"
 //import {loadThree} from "./components/amz-rainforest/amz-3"
-export default function App() {
-
+export default function App() { 
+const base = process.env.BASE
   const layoutLabels = {
     "sitetitle": "Blue Sky Innovations VR",
     "sitelogo":"",
@@ -43,24 +43,32 @@ export default function App() {
           "link": "bars",
           "element": Bars,
           "subtitle": "Lorem ipsum dolor sit amet ",
+          "usdz": `${base}/campaign-finance-datavis/ar/bars.reality`,
+          "img": `${base}/campaign-finance-datavis/ar/bars.reality`,
         },
         {
           "name": "Map",
           "link": "map",
           "element": Map,
           "subtitle": "Lorem ipsum dolor sit amet ",
+          "usdz": `${base}/campaign-finance-datavis/ar/bars.reality`,
+          "img": `${base}/campaign-finance-datavis/ar/map.reality`,
         },
         {
           "name": "Spheres-key",
           "link": "spheres-key",
           "element": SphereKeys,
           "subtitle": "Lorem ipsum dolor sit amet ",
+          "usdz": `${base}/campaign-finance-datavis/ar/spheres-key.reality`,
+          "img": `${base}/campaign-finance-datavis/ar/bars.reality`,
         },
         {
           "name": "Spheres",
           "link": "spheres",
           "element": Sphere,
           "subtitle": "Lorem ipsum dolor sit amet ",
+          "usdz": `${base}/campaign-finance-datavis/ar/sphere.reality`,
+          "img": `${base}/campaign-finance-datavis/ar/bars.reality`,
         },
       ]
     },
@@ -69,48 +77,48 @@ export default function App() {
       "link": "/amazon-rainforest/*",
       "element": Rainforest,
       "subtitle": "Lorem ipsum dolor sit amet ",
-      "img": "../../assets/amazon-quicklook/img/deforestation.jpg",
+      "img": `${base}/amazon-quicklook/img/deforestation.jpg`,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?",
       "children": [
         {
         "name": "Deforestation",
         "link": "deforestation",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/deforestation.usdz",
         "element": Deforestation,
         "subtitle": "Lorem ipsum dolor sit amet ",
-        "img": "../../assets/amazon-quicklook/img/deforestation.jpg",
+        "usdz": `${base}/amazon-quicklook/usdz/deforestation.usdz`,
+        "img": `${base}/amazon-quicklook/img/deforestation.jpg`,
       },
       {
         "name": "Lumberyard",
         "link": "lumberyard",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/sm_lumberyard.usdz",
         "element": Lumberyard,
         "subtitle": "Lorem ipsum dolor sit amet ",
-        "img": "../../assets/amazon-quicklook/img/lumberyard.jpg"
+        "usdz": `${base}/amazon-quicklook/usdz/sm_lumberyard.usdz`,
+        "img": `${base}/amazon-quicklook/img/lumberyard.jpg`
       },
       {
         "name": "Slaughterhouse",
         "link": "slaughterhouse",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/slaughterhouse.usdz",
         "element": Slaughterhouse,
         "subtitle": "Lorem ipsum dolor sit amet ",
-        "img": "../../assets/amazon-quicklook/img/slaughterhouse.jpg",
+        "usdz": `${base}/amazon-quicklook/usdz/slaughterhouse.usdz`,
+        "img": `${base}/amazon-quicklook/img/slaughterhouse.jpg`,
       },
       {
         "name": "Soyfarm",
         "link": "soyfarm",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/tribe.usdz",
         "element": Soyfarm,
         "subtitle": "Lorem ipsum dolor sit amet ",
-        "img": "../../assets/amazon-quicklook/img/soyfarm.jpg",
+        "usdz": `${base}/amazon-quicklook/usdz/tribe.usdz`,
+        "img": `${base}/amazon-quicklook/img/soyfarm.jpg`, 
       },
       {
         "name": "Tribe",
         "link": "tribe",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/tribe.usdz",
         "element": Tribe,
         "subtitle": "Lorem ipsum dolor sit amet",
-        "img": "../../assets/amazon-quicklook/img/tribe.jpg",
+        "usdz": `${base}/amazon-quicklook/usdz/tribe.usdz`,
+        "img": `${base}/amazon-quicklook/img/tribe.jpg`,
       },
       ]
     },
