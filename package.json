@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "--works with webpack-dev-server --node server.js to start project on localhost:3000 --sudo npm run dev",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
