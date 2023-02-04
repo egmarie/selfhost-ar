@@ -4,9 +4,9 @@ import { Outlet, Routes, Route, Link } from "react-router-dom"
 
 import { Shackleton } from "./components/shackleton"
 import { Finance } from "./components/campaign-finance/campaign-finance"
-import {Bars, Map, SphereKeys, Sphere} from "./components/campaign-finance/campaign_sub"
+import { Bars, Map, SphereKeys, Sphere } from "./components/campaign-finance/campaign_sub"
 import { Rainforest } from "./components/amz-rainforest/amz-rainforest"
-import {Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation} from "./components/amz-rainforest/amz_sub"
+import { Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation } from "./components/amz-rainforest/amz_sub"
 import { Home, NoMatch } from "./components/home"
 //import {loadThree} from "./components/amz-rainforest/amz-3"
 export default function App() { 
@@ -27,7 +27,7 @@ const base = process.env.BASE
       "link": "/shackleton",
       "element": Shackleton,
       "subtitle": "A Leadership Experience",
-      "img": "",
+      "img": `${base}/shackleton/shackleton_preview.jpeg`,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
     },
     {
@@ -110,7 +110,7 @@ const base = process.env.BASE
         "element": Soyfarm,
         "subtitle": "Lorem ipsum dolor sit amet ",
         "usdz": `${base}/amazon-quicklook/usdz/tribe.usdz`,
-        "img": `${base}/amazon-quicklook/img/soyfarm.jpg`, 
+        "img": `${base}/amazon-quicklook/img/soyFarm.jpg`, 
       },
       {
         "name": "Tribe",
