@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { Outlet, Routes, Route, Link, Switch} from "react-router-dom"
 import {Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation} from "./amz_sub"
-import {loadThree} from "./amz-3"
+//import {loadThree} from "./amz-3"
 
 export function Rainforest(props) {
   useEffect(() => {
