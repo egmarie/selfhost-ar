@@ -1,11 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { Outlet, Routes, Route, Link } from "react-router-dom"
-// import deforest_ from '../../assets/amazon-quicklook/img/deforestation.jpg'
-// import lumber_ from '../../assets/amazon-quicklook/img/lumberyard.jpg'
-// import slaughter_ from '../../assets/amazon-quicklook/img/slaughterhouse.jpg'
-// import soyfarm_ from '../../assets/amazon-quicklook/img/soyfarm.jpg';
-// import tribe_ from '../../assets/amazon-quicklook/img/tribe.jpg';
 
 // ### This code imports 3JS settings
 //import {loadThree} from "./amz-3"           {/* <canvas id="three1_container" className="webgl bg-white"></canvas> */} 
