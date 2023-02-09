@@ -134,18 +134,6 @@ const base = "https://blue-sky-ar-assets1222.s3.amazonaws.com"
     },
   ]
 }
-  //  outlet with react router dom
-  //  every component in its own file
-  //  nested props
-  //  state management
-  //    Redux and useContext + use Reduce
-  //    3-6 mos.
-  //    Redux Toolkit very valuable
-  //    Tests with Jest.js
-  //    Communication of technical things
-  //    flow charts, sequence diagrams
-  //    Vite much easier than Webpack
-  //    Java and C#: Cobolt
   return (
     <>
       {/* <React.StrictMode> */}
