@@ -1,4 +1,10 @@
-import React, { useEffect } from "react"
+//import React, { useEffect } from "react"
+// const React = require('react')
+// const { useEffect } = require('react')
+// const { Link } = require("react-router-dom")
+import React from "react"
+import ReactDOM from "react-dom"
+import { Outlet, Routes, Route, Link } from "react-router-dom"
 
 export function Shackleton(props) {
   useEffect(() => {
@@ -23,5 +29,3 @@ export function Shackleton(props) {
     </>
   )
 }
-
-//export {Shackleton}

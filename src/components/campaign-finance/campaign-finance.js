@@ -1,5 +1,7 @@
 import React, { useEffect } from "react"
 import { Outlet, Routes, Route, Link } from "react-router-dom"
+// const React = require('react')
+// const { Outlet, Routes, Route, Link } = require("react-router-dom")
 import {Bars, Map, SphereKeys, Sphere} from "./campaign_sub"
 
 export function Finance(props) {

@@ -1,7 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { Outlet, Routes, Route, Link } from "react-router-dom"
-
+// const React = require('react')
+// const ReactDOM = require('react-dom')
+// const { Outlet, Routes, Route, Link } = require("react-router-dom")
 
 function Bars(props) {
     let page = props.page

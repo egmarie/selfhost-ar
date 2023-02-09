@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
-import ReactDOM from "react-dom"
-import ReactDOM from "react-dom/client";
-import { Outlet, Routes, Route, Link } from "react-router-dom"
-import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom/client"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+// const { useEffect } = require('react')
+//const {BrowserRouter, Routes, Route, Link } = require("react-router-dom")
 
 import { Shackleton } from "./components/shackleton"
 import { Finance } from "./components/campaign-finance/campaign-finance"
@@ -10,11 +10,17 @@ import { Bars, Map, SphereKeys, Sphere } from "./components/campaign-finance/cam
 import { Rainforest } from "./components/amz-rainforest/amz-rainforest"
 import { Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation } from "./components/amz-rainforest/amz_sub"
 import { Home, NoMatch } from "./components/home"
+// const { Shackleton } = require("./components/shackleton")
+// const { Finance } = require("./components/campaign-finance/campaign-finance")
+// const { Bars, Map, SphereKeys, Sphere } = require("./components/campaign-finance/campaign_sub")
+// const { Rainforest } = require("./components/amz-rainforest/amz-rainforest")
+// const { Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation } = require("./components/amz-rainforest/amz_sub")
+// const { Home, NoMatch } = require("./components/home")
 //import {loadThree} from "./components/amz-rainforest/amz-3"
-import "./src/styles.scss";
+import "./styles.scss";
 
 function App() { 
-const base = process.env.BASE
+const base = "https://blue-sky-ar-assets1222.s3.amazonaws.com" 
   const layoutLabels = {
     "sitetitle": "Blue Sky Innovations VR",
     "sitelogo":"",
@@ -128,10 +134,21 @@ const base = process.env.BASE
     },
   ]
 }
-  
+  //  outlet with react router dom
+  //  every component in its own file
+  //  nested props
+  //  state management
+  //    Redux and useContext + use Reduce
+  //    3-6 mos.
+  //    Redux Toolkit very valuable
+  //    Tests with Jest.js
+  //    Communication of technical things
+  //    flow charts, sequence diagrams
+  //    Vite much easier than Webpack
+  //    Java and C#: Cobolt
   return (
     <>
-      <React.StrictMode>
+      {/* <React.StrictMode> */}
     <BrowserRouter>
     <HeaderLayout labels={layoutLabels} /> 
 
@@ -186,10 +203,10 @@ const base = process.env.BASE
       </div>
       
     <FooterLayout labels={layoutLabels} />
-
+ç
 
     </BrowserRouter>
-   </React.StrictMode>
+   {/* </React.StrictMode> */}
 
     </>
   )
