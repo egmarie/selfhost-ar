@@ -3,6 +3,7 @@
 // const { useEffect } = require('react')
 // const { Outlet, Routes, Route, Link } = require("react-router-dom")
 import React from "react"
+import { useEffect } from "react"
 import ReactDOM from "react-dom"
 import { Outlet, Routes, Route, Link } from "react-router-dom"
 import {Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation} from "./amz_sub"
