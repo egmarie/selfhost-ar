@@ -7,7 +7,7 @@
 // import nodeExternals from 'webpack-node-externals'
 
 
-const currentTask = "production"
+const currentTask = "build"
 const path = require("path")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
