@@ -1,8 +1,6 @@
 import React, { useEffect } from "react"
 import ReactDOM from "react-dom/client"
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
-// const { useEffect } = require('react')
-//const {BrowserRouter, Routes, Route, Link } = require("react-router-dom")
+import { BrowserRouter, Routes, Route, Link, redirect } from "react-router-dom"
 
 import { Shackleton } from "./components/shackleton"
 import { Finance } from "./components/campaign-finance/campaign-finance"
@@ -10,13 +8,7 @@ import { Bars, Map, SphereKeys, Sphere } from "./components/campaign-finance/cam
 import { Rainforest } from "./components/amz-rainforest/amz-rainforest"
 import { Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation } from "./components/amz-rainforest/amz_sub"
 import { Home, NoMatch } from "./components/home"
-// const { Shackleton } = require("./components/shackleton")
-// const { Finance } = require("./components/campaign-finance/campaign-finance")
-// const { Bars, Map, SphereKeys, Sphere } = require("./components/campaign-finance/campaign_sub")
-// const { Rainforest } = require("./components/amz-rainforest/amz-rainforest")
-// const { Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation } = require("./components/amz-rainforest/amz_sub")
-// const { Home, NoMatch } = require("./components/home")
-//import {loadThree} from "./components/amz-rainforest/amz-3"
+
 import "./styles.scss";
 
 function App() { 
@@ -34,7 +26,8 @@ const base = "https://blue-sky-ar-assets1222.s3.amazonaws.com"
     },
     {
       "name": "Shackleton",
-      "link": "/shackleton",
+      "link": "/shackleton/",
+      "linkd": "/shackleton/",
       "element": Shackleton,
       "subtitle": "A Leadership Experience",
       "img": `${base}/shackleton/shackleton_preview.jpeg`,
@@ -43,6 +36,7 @@ const base = "https://blue-sky-ar-assets1222.s3.amazonaws.com"
     {
       "name": "Campaign Finance",
       "link": "/campaign-finance/*",
+      "linkd": "/campaign-finance/bars",
       "element": Finance,
       "subtitle": "Lorem ipsum dolor sit amet ",
       "img": "",
@@ -85,6 +79,7 @@ const base = "https://blue-sky-ar-assets1222.s3.amazonaws.com"
     {
       "name": "Amazon Rainforest",
       "link": "/amazon-rainforest/*",
+      "linkd": "/amazon-rainforest/deforestation",
       "element": Rainforest,
       "subtitle": "Lorem ipsum dolor sit amet ",
       "img": `${base}/amazon-quicklook/img/deforestation.jpg`,

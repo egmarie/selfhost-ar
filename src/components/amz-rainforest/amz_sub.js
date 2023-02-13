@@ -1,10 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import ReactDOM from "react-dom"
 import { Outlet, Routes, Route, Link } from "react-router-dom"
 
-// ### This code imports 3JS settings
-//import {loadThree} from "./amz-3"           {/* <canvas id="three1_container" className="webgl bg-white"></canvas> */} 
-// onClick={() => loadThree()}
+
 function Deforestation(props) {
       return(
         <>
@@ -52,13 +50,13 @@ function Deforestation(props) {
 
   function Template(props) {
     // loadThree()
-  
+    const BASE = 'https://blue-sky-ar-assets1222.s3.amazonaws.com'
     let page = props.props
       return(
         <>
         <div className="subpage-container bg-light" >
+            <a className="ar" rel="ar" href={page.img}>
             <h5>{page.name}</h5>
-            <a className="ar" rel="ar" href="https://localhost:8080/assets/amazon-quicklook/usdz/lumberyard.usdz">
               <div className="imgContainer">
                 <img src={page.img} id="" className="posterImg" />
               </div>

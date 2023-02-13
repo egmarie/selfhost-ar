@@ -1,62 +1,57 @@
-import React from "react"
+import React, { useEffect } from "react"
 import ReactDOM from "react-dom"
 import { Outlet, Routes, Route, Link } from "react-router-dom"
-// const React = require('react')
-// const ReactDOM = require('react-dom')
-// const { Outlet, Routes, Route, Link } = require("react-router-dom")
 
-function Bars(props) {
+
+  function Bars(props) {
     let page = props.page
-
         return(
           <>
-      <div className="subpage-container">
-          <h5>{page.name}</h5>
-          <a className="ar" rel="ar" href="/assets/campaign-finance-datavis/ar/map.reality">hello</a>
-      </div>
-
-
-          
+            <Template props={props.page} />
           </>
         )
   }
   function Map(props) {
     let page = props.page
-
         return(
           <>
-       <div className="subpage-container">
-          <h5>{page.name}</h5>
-      </div>
-          
+            <Template props={props.page} />
           </>
         )
   }
   function SphereKeys(props) {
     let page = props.page
-
         return(
           <>
-      <div className="subpage-container">
-          <h5>{page.name}</h5>
-      </div>
-          
+            <Template props={props.page} />
           </>
         )
   }
   function Sphere(props) {
     let page = props.page
-
         return(
           <>
-      <div className="subpage-container">
-          <h5>{page.name}</h5>
-          <h5>{page.description}</h5>
-      </div>
-          
+            <Template props={props.page} />
           </>
         )
   }
+
+  function Template(props) {
+    // loadThree()
+    let page = props.props
+      return(
+        <>
+        <div className="subpage-container bg-light" >
+            <a className="ar" rel="ar" href={page.img}>
+            <h5>{page.name}</h5>
+              <div className="imgContainer">
+                <img src={page.img} id="" className="posterImg" />
+              </div>
+            </a> 
+        </div>
+        </>
+      )
+    }
 
   export {Bars, Map, SphereKeys, Sphere}
 

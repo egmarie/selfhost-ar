@@ -28,9 +28,10 @@ import { Link } from "react-router-dom"
           <p>{page.description}</p>
         </div>
       </div>
-    <ul className="d-flex flex-wrap">
+   <div class="container-fluid">
+    <ul className="row justify-content-evenly">
        {prjs2.map((proj) => 
-        <li key={proj.link.slice(1)} id={proj.link.slice(1)} className="port-container shadow-sm m-2 p-2"><Link to={proj.link}>
+        <li key={proj.link.slice(1)} id={proj.link.slice(1)} className="port-container shadow-sm m-4 p-2"><Link to={proj.link}>
             <div className="img-container bg-light">
               <img className="port-img" src={proj.img} />
             </div>
@@ -40,7 +41,7 @@ import { Link } from "react-router-dom"
         </Link></li>
         )}
     </ul>
-
+</div>
     </>
   )}
 function NoMatch() {

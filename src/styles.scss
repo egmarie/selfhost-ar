@@ -28,6 +28,11 @@ h4 {
   width: 100vw;
 }
 
+.port-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 .canvas {
   position: fixed;
   bottom: 0;

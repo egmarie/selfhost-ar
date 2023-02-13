@@ -1,12 +1,14 @@
 import React, { useEffect } from "react"
-import { Outlet, Routes, Route, Link } from "react-router-dom"
+import { Outlet, Routes, Route, Link, useNavigate } from "react-router-dom"
 // const React = require('react')
 // const { Outlet, Routes, Route, Link } = require("react-router-dom")
 import {Bars, Map, SphereKeys, Sphere} from "./campaign_sub"
 
 export function Finance(props) {
+  const navigate = useNavigate();
   useEffect(() => {
     document.title = "Campaign Finance"
+    navigate("/campaign-finance/bars");
   }, [])
   const pageArray = props.prjs.filter(p => p.name === "Campaign Finance");
   const page = pageArray[0]
