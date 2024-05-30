@@ -1,11 +1,20 @@
+//import React, { useEffect } from "react"
+// const React = require('react')
+// const { useEffect } = require('react')
+// const { Outlet, Routes, Route, Link } = require("react-router-dom")
 import React, { useEffect } from "react"
-import { Outlet, Routes, Route, Link, Switch} from "react-router-dom"
+import ReactDOM from "react-dom"
+import { Outlet, Routes, Route, Link, useNavigate } from "react-router-dom"
 import {Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation} from "./amz_sub"
-import {loadThree} from "./amz-3"
+
+//import {loadThree} from "./amz-3"
 
 export function Rainforest(props) {
+
+  const navigate = useNavigate();
   useEffect(() => {
     document.title = "Amazon Rainforest"
+    navigate("/amazon-rainforest/deforestation");
   }, [])
 //let thisPage = props.prjs
 const pageArray = props.prjs.filter(p => p.name === "Amazon Rainforest");

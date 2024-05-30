@@ -2,18 +2,15 @@
   "name": "server",
   "version": "1.0.0",
   "description": "--works with webpack-dev-server --node server.js to start project on localhost:3000 --sudo npm run dev",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev2": "npm-run-all -p backend frontend",
-    "backend": "nodemon server.js --ignore './src/' --ignore './public'",
-    "frontend": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server",
     "build": "webpack",
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "liz-gibson",
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.20.12",
@@ -23,22 +20,31 @@
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.27.2",
+    "crypto-browserify": "^3.12.0",
     "css-loader": "^6.7.3",
     "dat.gui": "^0.7.9",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "html-webpack-plugin": "^5.5.0",
     "https": "^1.0.0",
+    "https-browserify": "^1.0.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
+    "os-browserify": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
-    "request": "^2.79.0",
+    "request": "^2.88.2",
     "sass": "^1.58.0",
     "sass-loader": "^13.2.0",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
     "style-loader": "^3.3.1",
-    "three": "^0.149.0",
+    "url": "^0.11.0",
+    "util": "^0.12.5",
+    "utils": "^0.3.1",
     "validator": "^13.7.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
@@ -52,5 +58,8 @@
   "bugs": {
     "url": "https://github.com/egmarie/selfhost-ar/issues"
   },
-  "homepage": "https://github.com/egmarie/selfhost-ar#readme"
+  "homepage": "https://github.com/egmarie/selfhost-ar#readme",
+  "devDependencies": {
+    "webpack-node-externals": "^3.0.0"
+  }
 }

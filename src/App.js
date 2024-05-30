@@ -1,16 +1,18 @@
 import React, { useEffect } from "react"
-import ReactDOM from "react-dom"
-import { Outlet, Routes, Route, Link } from "react-router-dom"
+import ReactDOM from "react-dom/client"
+import { BrowserRouter, Routes, Route, Link, redirect } from "react-router-dom"
 
 import { Shackleton } from "./components/shackleton"
 import { Finance } from "./components/campaign-finance/campaign-finance"
-import {Bars, Map, SphereKeys, Sphere} from "./components/campaign-finance/campaign_sub"
+import { Bars, Map, SphereKeys, Sphere } from "./components/campaign-finance/campaign_sub"
 import { Rainforest } from "./components/amz-rainforest/amz-rainforest"
-import {Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation} from "./components/amz-rainforest/amz_sub"
+import { Tribe, Soyfarm, Slaughterhouse, Lumberyard, Deforestation } from "./components/amz-rainforest/amz_sub"
 import { Home, NoMatch } from "./components/home"
-//import {loadThree} from "./components/amz-rainforest/amz-3"
-export default function App() {
 
+import "./styles.scss";
+
+function App() { 
+const base = "https://blue-sky-ar-assets1222.s3.amazonaws.com" 
   const layoutLabels = {
     "sitetitle": "Blue Sky Innovations VR",
     "sitelogo":"",
@@ -24,15 +26,17 @@ export default function App() {
     },
     {
       "name": "Shackleton",
-      "link": "/shackleton",
+      "link": "/shackleton/",
+      "linkd": "/shackleton/",
       "element": Shackleton,
       "subtitle": "A Leadership Experience",
-      "img": "",
+      "img": `${base}/shackleton/shackleton_preview.jpeg`,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?"
     },
     {
       "name": "Campaign Finance",
       "link": "/campaign-finance/*",
+      "linkd": "/campaign-finance/bars",
       "element": Finance,
       "subtitle": "Lorem ipsum dolor sit amet ",
       "img": "",
@@ -43,84 +47,92 @@ export default function App() {
           "link": "bars",
           "element": Bars,
           "subtitle": "Lorem ipsum dolor sit amet ",
+          "usdz": `${base}/campaign-finance-datavis/ar/bars.reality`,
+          "img": `${base}/campaign-finance-datavis/ar/bars.reality`,
         },
         {
           "name": "Map",
           "link": "map",
           "element": Map,
           "subtitle": "Lorem ipsum dolor sit amet ",
+          "usdz": `${base}/campaign-finance-datavis/ar/bars.reality`,
+          "img": `${base}/campaign-finance-datavis/ar/map.reality`,
         },
         {
           "name": "Spheres-key",
           "link": "spheres-key",
           "element": SphereKeys,
           "subtitle": "Lorem ipsum dolor sit amet ",
+          "usdz": `${base}/campaign-finance-datavis/ar/spheres-key.reality`,
+          "img": `${base}/campaign-finance-datavis/ar/bars.reality`,
         },
         {
           "name": "Spheres",
           "link": "spheres",
           "element": Sphere,
           "subtitle": "Lorem ipsum dolor sit amet ",
+          "usdz": `${base}/campaign-finance-datavis/ar/sphere.reality`,
+          "img": `${base}/campaign-finance-datavis/ar/bars.reality`,
         },
       ]
     },
     {
       "name": "Amazon Rainforest",
       "link": "/amazon-rainforest/*",
+      "linkd": "/amazon-rainforest/deforestation",
       "element": Rainforest,
       "subtitle": "Lorem ipsum dolor sit amet ",
-      "img": "../../assets/amazon-quicklook/img/deforestation.jpg",
+      "img": `${base}/amazon-quicklook/img/deforestation.jpg`,
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eveniet dignissimos alias repellat officia qui rem nemo, unde magnam voluptatum obcaecati explicabo tempora quidem? Aperiam doloremque assumenda accusantium deleniti soluta?",
       "children": [
         {
         "name": "Deforestation",
         "link": "deforestation",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/deforestation.usdz",
         "element": Deforestation,
         "subtitle": "Lorem ipsum dolor sit amet ",
-        "img": "../../assets/amazon-quicklook/img/deforestation.jpg",
+        "usdz": `${base}/amazon-quicklook/usdz/deforestation.usdz`,
+        "img": `${base}/amazon-quicklook/img/deforestation.jpg`,
       },
       {
         "name": "Lumberyard",
         "link": "lumberyard",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/sm_lumberyard.usdz",
         "element": Lumberyard,
         "subtitle": "Lorem ipsum dolor sit amet ",
-        "img": "../../assets/amazon-quicklook/img/lumberyard.jpg"
+        "usdz": `${base}/amazon-quicklook/usdz/sm_lumberyard.usdz`,
+        "img": `${base}/amazon-quicklook/img/lumberyard.jpg`
       },
       {
         "name": "Slaughterhouse",
         "link": "slaughterhouse",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/slaughterhouse.usdz",
         "element": Slaughterhouse,
         "subtitle": "Lorem ipsum dolor sit amet ",
-        "img": "../../assets/amazon-quicklook/img/slaughterhouse.jpg",
+        "usdz": `${base}/amazon-quicklook/usdz/slaughterhouse.usdz`,
+        "img": `${base}/amazon-quicklook/img/slaughterhouse.jpg`,
       },
       {
         "name": "Soyfarm",
         "link": "soyfarm",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/tribe.usdz",
         "element": Soyfarm,
         "subtitle": "Lorem ipsum dolor sit amet ",
-        "img": "../../assets/amazon-quicklook/img/soyfarm.jpg",
+        "usdz": `${base}/amazon-quicklook/usdz/tribe.usdz`,
+        "img": `${base}/amazon-quicklook/img/soyFarm.jpg`, 
       },
       {
         "name": "Tribe",
         "link": "tribe",
-        "usdz": "https://localhost:8080/assets/amazon-quicklook/usdz/tribe.usdz",
         "element": Tribe,
         "subtitle": "Lorem ipsum dolor sit amet",
-        "img": "../../assets/amazon-quicklook/img/tribe.jpg",
+        "usdz": `${base}/amazon-quicklook/usdz/tribe.usdz`,
+        "img": `${base}/amazon-quicklook/img/tribe.jpg`,
       },
       ]
     },
   ]
 }
-  
   return (
     <>
-    {/* // <BrowserRouter> */}
-      
+      {/* <React.StrictMode> */}
+    <BrowserRouter>
     <HeaderLayout labels={layoutLabels} /> 
 
        <div className="container py-3 py-md-5 px-5">
@@ -174,10 +186,18 @@ export default function App() {
       </div>
       
     <FooterLayout labels={layoutLabels} />
-    {/* // </BrowserRouter> */}
+ç
+
+    </BrowserRouter>
+   {/* </React.StrictMode> */}
+
     </>
   )
 }
+
+ReactDOM.createRoot(document.getElementById("app")).render(
+  <App />
+);
 
 function HeaderLayout(props) {
   let title = props.labels.sitetitle
